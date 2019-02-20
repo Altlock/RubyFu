@@ -45,7 +45,7 @@ Download [ftp.pcap](https://github.com/rubyfu/RubyFu/blob/master/files/module06/
 
 ### Capturing and building PCAP file
 
-Sometime we don't have the time or option to install external libraries on our environment. Let's work capture all packets on all interfaces then see how to build a [**pcap**](https://wiki.wireshark.org/Development/LibpcapFileFormat) file to write in it.
+Sometimes we don't have the time or option to install external libraries on our environment. Let's capture all packets on all interfaces then see how to build a [**pcap**](https://wiki.wireshark.org/Development/LibpcapFileFormat) file to write in it.
 
 ```ruby
 #!/usr/bin/env ruby
@@ -106,11 +106,10 @@ end
 
 &lt;!--
 
-## !/usr/bin/env ruby
+[https://www.youtube.com/watch?v=owsr3X453Z4](https://www.youtube.com/watch?v=owsr3X453Z4)
 
-\#
-
-## [https://www.youtube.com/watch?v=owsr3X453Z4](https://www.youtube.com/watch?v=owsr3X453Z4)
+```
+#!/usr/bin/env ruby
 
 require 'packetfu'  
 require 'pp'
@@ -122,16 +121,16 @@ capture.stream.each do \|p\|
 pkt = PacketFu::Packet.parse p  
 pp pkt  
 end
-
+```
 **\**
 
 ## array 56
-
+```
 include PacketFu  
 packets = PcapFile.file\_to\_array '/home/KING/wireless.pcap'
 
 packets.each_with\_index do \|packet , ref\|  
-puts "_" _ 75  
+puts "_"  _75  
 puts "Reference: \#{ref}"  
 puts "\_" \_ 75
 
@@ -140,9 +139,9 @@ puts pkt.dissect
 sleep 2
 
 end
-
+```
 **\**
-
+```
 packets = PcapFile.read\_packets '/home/KING/wireless.pcap'  
 packet = packets\[56\]  
 pkt = Packet.parse\(packet\)  
@@ -157,5 +156,6 @@ puts pkt.inspect\_hex
 459  
 458  
 =end  
+```
 ---&gt;
 
